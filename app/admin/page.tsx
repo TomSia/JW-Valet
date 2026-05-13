@@ -2,6 +2,7 @@ import Image from "next/image";
 import jwlogo from "../images/jw-logo.jpeg"
 
 
+
 export default function LogIn() {
   return (
     <main className="flex justify-center text-center">
