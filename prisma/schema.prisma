@@ -27,4 +27,11 @@ model vehicle {
   car_year    Int?
   car_make    String?  @db.VarChar
   car_model   String?  @db.VarChar
+  status      status?  @default(Gone)
+}
+
+enum status {
+  Gone
+  Parked
+  Requested
 }
