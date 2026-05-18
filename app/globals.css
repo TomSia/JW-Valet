@@ -5,6 +5,11 @@
   --foreground: #f9f8f6;
 }
 
+[data-theme="dark"] {
+  --bg-color: #66615d;
+  --text-color: #f9f8f6;
+}
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -22,7 +27,7 @@
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Roboto;
 }
 
 .long-dash-border {

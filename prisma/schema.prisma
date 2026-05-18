@@ -20,7 +20,7 @@ model User {
 model vehicle {
   id          BigInt   @id @default(autoincrement())
   created_at  DateTime @default(now()) @db.Timestamptz(6)
-  code        String?  @default(dbgenerated("lpad((floor((random() * (1000000)::double precision)))::text, 6, '0'::text)")) @db.VarChar
+  code        String?  @unique(map: "Vehicle_code_key") @default(dbgenerated("lpad((floor((random() * (1000000)::double precision)))::text, 6, '0'::text)")) @db.VarChar
   fname       String?  @db.VarChar
   lname       String?  @db.VarChar
   rego_number String?  @db.VarChar
@@ -28,6 +28,7 @@ model vehicle {
   car_make    String?  @db.VarChar
   car_model   String?  @db.VarChar
   status      status?  @default(Gone)
+  location    String?
 }
 
 enum status {
